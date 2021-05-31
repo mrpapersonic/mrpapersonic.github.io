@@ -3,12 +3,41 @@
 <head>
 	<title>Paper's website</title>
 	<style>
-		body {
-			background: rgb(7,0,119);
-			background: -moz-radial-gradient(circle, rgba(7,0,119,1) 0%, rgba(9,9,121,1) 7%, rgba(0,75,194,1) 100%);
-			background: -webkit-radial-gradient(circle, rgba(7,0,119,1) 0%, rgba(9,9,121,1) 7%, rgba(0,75,194,1) 100%);
-			background: radial-gradient(circle, rgba(7,0,119,1) 0%, rgba(9,9,121,1) 7%, rgba(0,75,194,1) 100%);
-			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#070077",endColorstr="#004bc2",GradientType=1);
+		.wrapper { 
+			height: 100%;
+			width: 100%;
+			left:0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			position: absolute;
+			background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+			background-size: 1800% 1800%;
+			-webkit-animation: rainbow 18s ease infinite;
+			-z-animation: rainbow 18s ease infinite;
+			-o-animation: rainbow 18s ease infinite;
+			animation: rainbow 18s ease infinite;
+			z-index: -1;
+		}
+		@-webkit-keyframes rainbow {
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
+		}
+		@-moz-keyframes rainbow {
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
+		}
+		@-o-keyframes rainbow {
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
+		}
+		@keyframes rainbow { 
+			0%{background-position:0% 82%}
+			50%{background-position:100% 19%}
+			100%{background-position:0% 82%}
 		}
 		div.box {
 			padding: 10px;
@@ -21,10 +50,16 @@
 			text-shadow: none;
 			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 		}
+		div.disclaimer {
+			left: 5px;
+			bottom: 5px;
+			position: absolute;
+		}
 	</style>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<div class="wrapper"></div>
 	<h1>Heys!</h1>
 	<h2>welcome to MY AWESOME WEBSITE</h2>
 	<div class="box">
@@ -45,4 +80,5 @@
 		<img src="img/h-free-anim.gif" width="88" height="31">
 	</p>
 	<p><a href="cool.html">cool shit</a></p>
+	<div class="disclaimer">rainbow css stolen from <a href="https://codepen.io/nohoid/pen/kIfto">here</a></div>
 </body>
