@@ -16,6 +16,7 @@
 	<meta property="og:url" content="https://mrpapersonic.github.io">
 	<meta property="og:description" content="hey!">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<!-- rainbow css stolen from https://codepen.io/nohoid/pen/kIfto -->
 	<style>
 		.wrapper { 
 			height: 100%;
@@ -64,53 +65,24 @@
 			text-shadow: none;
 			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
 		}
-		div.disclaimer {
-			left: 5px;
-			bottom: 5px;
-			position: absolute;
+		div.luckystar {
+			position: fixed;
+			width: 350px; 
+			padding: 3px; 
+			border: 2px solid #d75016; 
+			background-color: #FAFAD2; 
+			text-shadow: none;
+			box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+			margin: 0 auto;
+			left: 10px;
+			bottom: 10px;
+		}
+		img.crash {
+			position: fixed;
+			bottom: 10px;
+			right: 10px;
 		}
 	</style>
-	<script>
-		window['libopenmpt'] = {};
-		libopenmpt.locateFile = function (filename) {
-			return filename;
-		};
-		libopenmpt.onRuntimeInitialized = function () {
-			var player;
-			if (document.referrer) {
-				init();
-				path = "overoff-f.mod";
-				if (player != undefined) {
-					player.load(path, afterLoad.bind(this, path));
-				}
-			}
-			else {
-				document.getElementById('button').style.visibility = "visible";
-			}
-			function init() {
-				if (player == undefined) {
-					player = new ChiptuneJsPlayer(new ChiptuneJsConfig(-1));
-				}
-				else {
-					player.stop();
-					player = undefined;
-				}
-			};
-			function afterLoad(path, buffer) {
-				player.play(buffer);
-			};
-			document.getElementById('button').onclick = function() {
-				init();
-				path = "overoff-f.mod";
-				if (player != undefined) {
-					player.load(path, afterLoad.bind(this, path));
-				}
-				document.getElementById('button').style.visibility = "hidden";
-			};
-		}
-	</script>
-	<script src="libopenmpt.js"></script>
-	<script src="chiptune2.js"></script>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -135,6 +107,12 @@
 		<img src="img/h-free-anim.gif" width="88" height="31">
 	</p>
 	<p><a href="cool.html">cool shit</a></p>
-	<input id="button" type="submit" name="button" value="music" style="visibility: hidden;">
-	<div class="disclaimer">rainbow css stolen from <a href="https://codepen.io/nohoid/pen/kIfto">here</a></div>
+	<div class="luckystar">
+		<center style="font-family: Times New Roman, Times, serif; font-size: 1.20em; font-weight: bold; color: #d75116;">Certificate: Test results</center>
+		<center style="font-family: Times New Roman, Times, serif; font-size: 1.20em; font-weight: bold; color: #d75116;">What Lucky Star Character Are You?</center>
+		<p style="font-family: Times New Roman, Times, serif; font-size: 1em; color: #5c5c5c;">
+			<img src="https://www.allthetests.com/quiz31/picture_thumb/pic_1402476083_1001.jpg?1592828541" width="106" height="150" loading="lazy" align="left" alt="1001" title="Click to enlarge" style="margin:4pt; box-shadow: none;">
+			<b>For 40% you are: </b>Konata Izumi!<br>You are an OTAKU! You love to hang back and sometimes don't do homework... But you are a fun loving character who loves to prank and crack a joke once and a while! <br /><b> 60% of 3414 quiz participants had this profile!</b><br> &nbsp; <br>Take this quiz: <a href="https://www.allthetests.com/quiz31/quiz/1402476083/What-Lucky-Star-Character-Are-You">What Lucky Star Character Are You?</a></p>
+	</div>
+	<img class="crash" src="crash.jpg" height="266" style="image-rendering: auto;">
 </body>
